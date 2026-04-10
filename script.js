@@ -109,6 +109,7 @@ function generateHTML(data) {
 
     html += `<div class="question">`;
     html += `<h3>${question}</h3>`;
+    // html += `<div class="small">${item.categories.join(' ')}</div>`;
     html += `<ul>`;
 
     item.ans.forEach((answer) => {
@@ -116,6 +117,7 @@ function generateHTML(data) {
     });
 
     html += `</ul>`;
+    // html += `<div class="show">Poprawna odpowiedź: <a class='btn' onclick='javascript:show(this)' data-correct='${item.correct}'>KLIKNIJ</a></div>`;
     html += `</div>`;
   }
   resultsEle.innerHTML = html;
@@ -131,3 +133,11 @@ function generateHTML(data) {
 }
 
 generateHTML(data);
+
+
+
+window.show = (ele) => {
+  ele.textContent = ele.dataset.correct
+  ele.removeAttribute('onclick')
+  return false
+}

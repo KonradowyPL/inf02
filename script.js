@@ -1,16 +1,30 @@
-import data from "./results.json" with { type: 'json' };
+import data from "./inf02.json" with { type: 'json' };
 
 const resultsEle = document.querySelector(".results");
 const filtersEle = document.querySelector(".filters");
 
+
+function shuffle(array) {
+
+	// Iterate over the array in reverse order
+	for (let i = array.length - 1; i > 0; i--) {
+
+		// Generate Random Index
+		const j = Math.floor(Math.random() * (i + 1));
+
+		// Swap elements
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+}
+
 const categories = (() => {
   const categories = new Set();
-  Object.keys(data).forEach((q) => {
-    console.log(q);
-    data[q].categories.forEach((a) => {
+
+  for (const q of data) {
+    q.categories.forEach((a) => {
       categories.add(a);
     });
-  });
+  }
 
   const asArr = Array.from(categories).sort();
   console.log(asArr);
@@ -66,11 +80,8 @@ function radio() {
 window.radio = radio;
 
 function filtered(question, filters, search) {
-  // check filters
-  const q = data[question];
-
   // nie może zawierać
-  for (const cat of q.categories) {
+  for (const cat of question.categories) {
     if (filters[cat] === "exclude") {
       return true;
     }
@@ -78,7 +89,7 @@ function filtered(question, filters, search) {
 
   // musi zawierać
   for (const [cat, val] of Object.entries(filters)) {
-    if (val === "include" && !q.categories.includes(cat)) {
+    if (val === "include" && !question.categories.includes(cat)) {
       return true;
     }
   }
@@ -96,36 +107,36 @@ function generateHTML(data) {
   const filters = radio();
   const search = "";
 
-  for (const question in data) {
-    const item = data[question];
+  for (const question of data) {
 
     if (filtered(question, filters, search)) {
       continue;
     }
 
-    for (const cat of item.categories) {
+    for (const cat of question.categories) {
       counter[cat]++;
     }
 
     html += `<div class="question">`;
-    html += `<h3>${question}</h3>`;
-    // html += `<div class="small">${item.categories.join(' ')}</div>`;
+    html += `<h3>${question.question}</h3>`;
+    html += `<div class="small">${question.categories.join(' ')}</div>`;
     html += `<ul>`;
 
-    item.ans.forEach((answer) => {
+    question.ans.forEach((answer) => {
       html += `<li>${answer}</li>`;
     });
 
     html += `</ul>`;
-    // html += `<div class="show">Poprawna odpowiedź: <a class='btn' onclick='javascript:show(this)' data-correct='${item.correct}'>KLIKNIJ</a></div>`;
+    html += `<div class="show">Poprawna odpowiedź: <a class='btn' onclick='javascript:show(this)' data-correct='${question.correct}'>KLIKNIJ</a></div>`;
+    if (question.file) {
+      html += `<img src=${question.file} lazy>`;
+    }
     html += `</div>`;
   }
   resultsEle.innerHTML = html;
 
-  console.log(counter);
 
   Object.keys(counter).forEach((f) => {
-    console.log(f);
     document.querySelector(
       `#${f.replace("/", "_")}-counter`
     ).textContent = `(${counter[f]})`;
@@ -134,10 +145,15 @@ function generateHTML(data) {
 
 generateHTML(data);
 
-
-
 window.show = (ele) => {
-  ele.textContent = ele.dataset.correct
-  ele.removeAttribute('onclick')
-  return false
+  ele.textContent = ele.dataset.correct;
+  ele.removeAttribute("onclick");
+  return false;
+};
+
+
+window.shuffle = () => {
+  shuffle(data)
+  console.log("szafa")
+  generateHTML(data)
 }

@@ -96,27 +96,29 @@ function filtered(question, filters, search) {
   return false;
 }
 
-function generateHTML(data) {
-  const counter = {};
-
-  for (const c of categories) {
-    counter[c] = 0;
-  }
-
-  let html = "";
-  const filters = radio();
-  const search = "";
+function* questionGenerator(data, filters, search) {
+  let batch = [];
 
   for (const question of data) {
+    if (filtered(question, filters, search)) continue;
 
-    if (filtered(question, filters, search)) {
-      continue;
+    batch.push(question);
+
+    if (batch.length === 10) {
+      yield batch;
+      batch = [];
     }
+  }
 
-    for (const cat of question.categories) {
-      counter[cat]++;
-    }
+  if (batch.length > 0) {
+    yield batch;
+  }
+}
 
+function renderBatch(batch) {
+  let html = "";
+
+  for (const question of batch) {
     html += `<div class="question">`;
     html += `<h3>${question.question}</h3>`;
     html += `<div class="small">${question.categories.join(' ')}</div>`;
@@ -127,20 +129,54 @@ function generateHTML(data) {
     });
 
     html += `</ul>`;
-    html += `<div class="show">Poprawna odpowiedź: <a class='btn' onclick='javascript:show(this)' data-correct='${question.correct}'>KLIKNIJ</a></div>`;
+    html += `<div class="show">Poprawna odpowiedź: 
+      <a class='btn' onclick='show(this)' data-correct='${question.correct}'>KLIKNIJ</a>
+    </div>`;
+
     if (question.file) {
-      html += `<img src=${question.file} lazy>`;
+      html += `<img src="${question.file}" loading="lazy">`;
     }
+
     html += `</div>`;
   }
-  resultsEle.innerHTML = html;
 
+  resultsEle.insertAdjacentHTML("beforeend", html);
+}
 
-  Object.keys(counter).forEach((f) => {
-    document.querySelector(
-      `#${f.replace("/", "_")}-counter`
-    ).textContent = `(${counter[f]})`;
-  });
+function generateHTML(data) {
+  const filters = radio();
+  const search = "";
+
+  resultsEle.innerHTML = "";
+
+  const generator = questionGenerator(data, filters, search);
+
+  function loadNextBatch() {
+    const next = generator.next();
+    if (next.done) return;
+    console.log("batch render")
+    renderBatch(next.value);
+    observeLast();
+  }
+
+  function observeLast() {
+    const questions = document.querySelectorAll(".question");
+    const last = questions[questions.length - 10];
+
+    if (!last) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        observer.disconnect();
+        loadNextBatch();
+      }
+    });
+
+    observer.observe(last);
+  }
+
+  // initial load
+  loadNextBatch();
 }
 
 generateHTML(data);

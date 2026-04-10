@@ -3,18 +3,18 @@ import data from "./inf02.json" with { type: 'json' };
 const resultsEle = document.querySelector(".results");
 const filtersEle = document.querySelector(".filters");
 
+const counter = {};
+
 
 function shuffle(array) {
+  // Iterate over the array in reverse order
+  for (let i = array.length - 1; i > 0; i--) {
+    // Generate Random Index
+    const j = Math.floor(Math.random() * (i + 1));
 
-	// Iterate over the array in reverse order
-	for (let i = array.length - 1; i > 0; i--) {
-
-		// Generate Random Index
-		const j = Math.floor(Math.random() * (i + 1));
-
-		// Swap elements
-		[array[i], array[j]] = [array[j], array[i]];
-	}
+    // Swap elements
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 const categories = (() => {
@@ -96,12 +96,10 @@ function filtered(question, filters, search) {
   return false;
 }
 
-function* questionGenerator(data, filters, search) {
+function* questionGenerator(data) {
   let batch = [];
 
   for (const question of data) {
-    if (filtered(question, filters, search)) continue;
-
     batch.push(question);
 
     if (batch.length === 10) {
@@ -121,7 +119,7 @@ function renderBatch(batch) {
   for (const question of batch) {
     html += `<div class="question">`;
     html += `<h3>${question.question}</h3>`;
-    html += `<div class="small">${question.categories.join(' ')}</div>`;
+    html += `<div class="small">${question.categories.join(" ")}</div>`;
     html += `<ul>`;
 
     question.ans.forEach((answer) => {
@@ -149,12 +147,37 @@ function generateHTML(data) {
 
   resultsEle.innerHTML = "";
 
-  const generator = questionGenerator(data, filters, search);
+  for (const c of categories) {
+    counter[c] = 0;
+  }
+
+  const passed = [];
+  // filter questions:
+  for (const question of data) {
+    if (!filtered(question, filters, search)) {
+      passed.push(question);
+      for (const cat of question.categories) {
+        counter[cat]++;
+      }
+    }
+  }
+
+  Object.keys(counter).forEach((f) => {
+    const e = document.querySelector(
+      `#${f.replace("/", "_")}-counter`
+    )
+    e.textContent = `(${counter[f]})`;
+    e.classList.toggle('empty', !counter[f])
+
+
+  });
+
+  const generator = questionGenerator(passed);
 
   function loadNextBatch() {
     const next = generator.next();
     if (next.done) return;
-    console.log("batch render")
+    console.log("batch render");
     renderBatch(next.value);
     observeLast();
   }
@@ -187,9 +210,8 @@ window.show = (ele) => {
   return false;
 };
 
-
 window.shuffle = () => {
-  shuffle(data)
-  console.log("szafa")
-  generateHTML(data)
-}
+  shuffle(data);
+  console.log("szafa");
+  generateHTML(data);
+};

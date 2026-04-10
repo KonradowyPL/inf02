@@ -8,8 +8,12 @@ html {
   display: grid;
   grid-gap: 5px;
   white-space: nowrap;
-  grid-template-columns: 200px auto auto auto;
+  grid-template-columns: 150px auto auto auto;
   width: 300px;
+}
+
+span:has(.empty) {
+  color: #888;
 }
 
 .btn[onclick] {

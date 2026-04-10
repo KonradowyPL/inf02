@@ -17,6 +17,23 @@ const categories = (() => {
   return asArr
 })();
 
+function updateParam () {
+  const filters = radio();
+  const search = "";
+  const url = new URL(window.location.href);
+  url.search = ''
+
+  url.searchParams.set('search', search)
+  
+  Object.keys(filters).forEach(f => {
+    url.searchParams.set(f, filters[f])
+  }) 
+
+  window.history.replaceState({}, '', url);
+
+  generateHTML(data)
+}
+
 
 {
   // generate categories
@@ -31,14 +48,59 @@ const categories = (() => {
     html += `<input type="radio" id="${c}-include" name="${c}" value="include" />`
   })
   filtersEle.innerHTML = html
+  filtersEle.querySelectorAll('input').forEach(e => {
+    e.addEventListener("click", updateParam)
+  })
 }
 
+window.up = updateParam
+
+
+function radio() {
+  const filters = {}
+  categories.forEach(c => {
+    const p = document.querySelector(`input[name="${c}"]:checked`).value
+    if (p !== 'unset') filters[c] = p
+  })
+  return filters
+}
+
+window.radio= radio;
+
+
+function filtered(question, filters, search) {
+  // check filters
+  const q = data[question]
+  // nie może zawierać
+  for (const cat of q.categories) {
+    // console.log(cat)
+    if (filters[cat] === "exclude") {
+      return true
+    }
+  }
+
+  // musi zawierać
+  for (const cat of Object.keys(filters)) {
+    if (filters[cat] === "include" && !q.categories.includes(cat)) {
+
+      return true
+    }
+  }
+  return false
+
+}
 
 function generateHTML(data) {
   let html = "";
+  const filters = radio()
+  const search = ""
 
   for (const question in data) {
     const item = data[question];
+
+    if (filtered(question, filters, search)) {
+      continue;
+    }
 
     html += `<div class="question">`;
     html += `<h3>${question}</h3>`;
@@ -51,11 +113,11 @@ function generateHTML(data) {
     html += `</ul>`;
     html += `</div>`;
   }
+  resultsEle.innerHTML = html
 
-  return html;
 }
 
 
 
 
-resultsEle.innerHTML = generateHTML(data)
+generateHTML(data)

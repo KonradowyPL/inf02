@@ -150,7 +150,7 @@
       "oczyszczanie dysku",
       "defragmentację dysku"
     ],
-    "correct": "program scandisk",
+    "correct": "defragmentację dysku",
     "file": null,
     "categories": [
       "tools",
@@ -688,7 +688,7 @@
       "VoIP (Voice over Internet Protocol)",
       "VLAN (Virtual Local Area Network)"
     ],
-    "correct": "VLAN (Virtual Local Area Network)",
+    "correct": "VPN (Virtual Private Network)",
     "file": null,
     "categories": ["security", "networking"],
     "question": "Aby utworzyć bezpieczny wirtualny tunel między dwoma komputerami podłączonymi do Internetu, należy zastosować technologię"
@@ -2656,7 +2656,7 @@
   },
   {
     "ans": ["Do klasy A", "Do klasy B", "Do klasy C", "Do klasy D"],
-    "correct": "Do klasy D",
+    "correct": "Do klasy B",
     "file": null,
     "categories": ["networking/ip", "networking"],
     "question": "Do której klasy adresów IP należy adres 130.140.0.0?"
@@ -4736,7 +4736,7 @@
   },
   {
     "ans": ["10 mm", "13 mm", "15 mm", "20 mm"],
-    "correct": "20 mm",
+    "correct": "13 mm",
     "file": null,
     "categories": ["standard", "networking"],
     "question": "Jaka jest wartość maksymalnego rozplotu kabla UTP we wtyku RJ45 zgodnie z normą PN-EN 50173?"
@@ -5570,7 +5570,7 @@
   },
   {
     "ans": ["2", "3", "4", "5"],
-    "correct": "3",
+    "correct": "5",
     "file": null,
     "categories": ["networking/wifi", "networking"],
     "question": "Jeżeli na danej przestrzeni będą działały równocześnie dwie sieci WLAN standardy 802.11g, to aby wyeliminować możliwość wzajemnych zakłóceń należy im przydzielić kanały o numerach różniących się o"
@@ -6733,7 +6733,7 @@
   },
   {
     "ans": ["gość", "admin", "pomocnik", "administrator"],
-    "correct": "administrator",
+    "correct": "admin",
     "file": null,
     "categories": ["windows"],
     "question": "Które konto nie jest wbudowanym w systemie Windows XP ?"
@@ -7874,7 +7874,7 @@
       "192.168.1.44/28",
       "192.168.1.48/28"
     ],
-    "correct": "192.168.1.88/27",
+    "correct": "192.168.1.48/28",
     "file": null,
     "categories": ["networking/ip", "networking"],
     "question": "Który adres podsieci jest prawidłowy po pożyczeniu 4 bitów z części hosta z adresu klasowego 192.168.1.0?"
@@ -8446,7 +8446,7 @@
   },
   {
     "ans": ["NS", "PTR", "AAAA", "CNAME"],
-    "correct": "PTR",
+    "correct": "CNAME",
     "file": null,
     "categories": ["web", "web/dns", "networking"],
     "question": "Który rekord bazy DNS (Domain Name System) pozwala na zdefiniowanie aliasu rekordu A?"
@@ -9685,7 +9685,7 @@
   },
   {
     "ans": ["DC", "CD", "CC", "DD"],
-    "correct": "DD",
+    "correct": "CD",
     "file": null,
     "categories": ["conversion/systems", "conversion", "liczenie"],
     "question": "Liczba 205(10)zapisana w systemie szesnastkowym ma wartość"
@@ -9865,7 +9865,7 @@
   },
   {
     "ans": ["11", "-11", "245", "-245"],
-    "correct": "-245",
+    "correct": "-11",
     "file": null,
     "categories": ["conversion/systems", "conversion", "liczenie"],
     "question": "Liczbą dziesiętną, która odpowiada liczbie 11110101(U2), jest"
@@ -9941,7 +9941,7 @@
       "ISA – Industry Standard Architecture",
       "PCI – Peripheral Component Interconnect"
     ],
-    "correct": "PCI – Peripheral Component Interconnect",
+    "correct": "FSB – Front Side Bus",
     "file": null,
     "categories": ["hardware", "hardware/procesor"],
     "question": "Magistrala, która łączy w komputerze procesor z kontrolerem pamięci, składająca się z szyny adresowej, szyny danych i linii sterujących, nosi nazwę"
@@ -10573,7 +10573,7 @@
       "można zainstalować kartę graficzną ze złączem ISA",
       "można zainstalować kartę graficzną ze złączem PCI-Express"
     ],
-    "correct": "można zainstalować kartę graficzną ze złączem PCI-Express",
+    "correct": "można zainstalować kartę graficzną ze złączem AGP",
     "file": null,
     "categories": ["hardware"],
     "question": "Na płycie głównej wykorzystującej układ Intel 865G"
@@ -10623,7 +10623,7 @@
   },
   {
     "ans": ["sieci.", "komputera", "pętli zwrotnej.", "rozgłoszeniowym."],
-    "correct": "komputera",
+    "correct": "rozgłoszeniowym.",
     "file": "./data/167.jpg",
     "categories": ["networking/ip", "networking"],
     "question": "Na rysunku jest przedstawiony komunikat pojawiający się po wpisaniu adresu IP podczas konfiguracji połączenia sieciowego na komputerze. Adres IP wprowadzony przez administratora jest adresem IP"
@@ -11131,7 +11131,7 @@
       "4 przełączników i 8 ruterów.",
       "8 przełączników i 3 ruterów."
     ],
-    "correct": "8 przełączników i 3 ruterów.",
+    "correct": "4 przełączników i 3 ruterów.",
     "file": "./data/220.jpg",
     "categories": ["networking"],
     "question": "Na schemacie znajdują się symbole"
@@ -11455,7 +11455,7 @@
   },
   {
     "ans": ["802.11 a", "802.11 b", "802.11 g", "802.11 n"],
-    "correct": "802.11 b",
+    "correct": "802.11 n",
     "file": null,
     "categories": ["networking/wifi", "standard", "networking"],
     "question": "Największą szybkość transmisji danych w sieci bezprzewodowej uzyska się stosując urządzenia standardu"
@@ -11524,7 +11524,7 @@
       "Montażu modułu Krone w gniazdach",
       "Wykonania zakończeń kablowych w złączach LSA"
     ],
-    "correct": "Zaciskania wtyków RJ45",
+    "correct": "Wykonania zakończeń kablowych w złączach LSA",
     "file": "./data/234.jpg",
     "categories": ["tools", "networking"],
     "question": "Narzędzie na zdjęciu służy do"
@@ -11825,7 +11825,7 @@
   },
   {
     "ans": ["oktalnym.", "binarnym.", "dziesiętnym.", "heksadecymalnym."],
-    "correct": "binarnym.",
+    "correct": "heksadecymalnym.",
     "file": null,
     "categories": ["conversion/systems", "conversion"],
     "question": "Notacja #108 oznacza zapis liczby w systemie"
@@ -12021,7 +12021,7 @@
       "w pośrednim punkcie rozdzielczym z gniazdem abonenckim",
       "w głównym punkcie rozdzielczym w pośrednimi punktami rozdzielczymi"
     ],
-    "correct": "w głównym punkcie rozdzielczym z gniazdem abonenckim",
+    "correct": "w głównym punkcie rozdzielczym w pośrednimi punktami rozdzielczymi",
     "file": null,
     "categories": ["networking"],
     "question": "Okablowanie pionowe w sieci strukturalnej łączy się"
@@ -12853,7 +12853,7 @@
   },
   {
     "ans": ["USB na PS/2", "USB na LPT", "USB na COM", "USB na RS-232"],
-    "correct": "USB na RS-232",
+    "correct": "USB na LPT",
     "file": null,
     "categories": ["hardware/interface", "hardware"],
     "question": "Podłączając drukarkę wyposażoną w złącze równoległe do komputera, który posiada tylko porty USB należy zainstalować adapter"
@@ -14603,7 +14603,7 @@
       "pozostać w drukarce, bez wykonywania dodatkowych czynności",
       "pozostać w drukarce, którą należy zabezpieczyć folią"
     ],
-    "correct": "pozostać w drukarce, którą należy zabezpieczyć folią",
+    "correct": "zostać zabezpieczone w specjalnych pudełkach uniemożliwiających zasychanie dysz",
     "file": null,
     "categories": ["hardware/drukarki", "hardware"],
     "question": "Przy dłuższych przestojach drukarki atramentowej używane w niej pojemniki z tuszem powinny"
@@ -14892,7 +14892,7 @@
       "mapuje nazwę domeny DNS na nazwę serwera poczty.",
       "mapuje nazwę hosta na odpowiadający jej 32-bitowy adres IPv4."
     ],
-    "correct": "przechowuje informację o nadrzędnym serwerze DNS.",
+    "correct": "mapuje nazwę hosta na odpowiadający jej 32-bitowy adres IPv4.",
     "file": null,
     "categories": ["networking/protocol", "web", "web/dns", "networking"],
     "question": "Rekord typu A serwera DNS"
@@ -17774,7 +17774,7 @@
   },
   {
     "ans": ["LCD", "DLP", "LED", "LCOS"],
-    "correct": "LCOS",
+    "correct": "DLP",
     "file": null,
     "categories": ["hardware"],
     "question": "W której technologii budowy projektorów wykorzystywany jest system mikroskopijnych luster, z których każde odpowiada 1 pikselowi wyświetlanego obrazu?"
@@ -18155,7 +18155,7 @@
   },
   {
     "ans": ["ISA", "DNS", "DCHP", "DHCP"],
-    "correct": "DNS",
+    "correct": "DHCP",
     "file": null,
     "categories": ["networking/services", "networking"],
     "question": "W sieci lokalnej zainstalowano serwer, który ma za zadanie przydzielanie dynamicznego adresu IP. Jaka usługa musi być uruchomiona na tym serwerze?"
@@ -18214,7 +18214,7 @@
       "Światłowód wielomodowy",
       "Światłowód jednomodowy"
     ],
-    "correct": "Światłowód jednomodowy",
+    "correct": "Kabel UTP kategorii 5e",
     "file": null,
     "categories": ["networking/fiber", "hardware", "networking"],
     "question": "W stacjach roboczych są zainstalowane karty sieciowe Ethernet 10/100/1000 ze złączem RJ45. Które medium transmisyjne należy wybrać do budowy sieci komputerowej, aby zapewnić pracę z najwyższą przepustowością?"
@@ -18511,7 +18511,7 @@
       "wyszukania znaku ~ w zapisanych danych",
       "przejścia do katalogu domowego użytkownika"
     ],
-    "correct": "przejścia do katalogu głównego",
+    "correct": "przejścia do katalogu domowego użytkownika",
     "file": null,
     "categories": ["linux/filesystem", "linux", "linux/cmd"],
     "question": "W systemie Linux polecenie cd ~ służy do"
@@ -18823,7 +18823,7 @@
   },
   {
     "ans": ["users", "net user", "useradd", "adduser"],
-    "correct": "adduser",
+    "correct": "net user",
     "file": null,
     "categories": ["windows/cmd", "windows"],
     "question": "W systemie Windows konto użytkownika tworzy się poleceniem"
@@ -19054,7 +19054,7 @@
       "pula adresów w tym zakresie jest wyczerpana w 100%.",
       "pula adresów w tym zakresie jest wyczerpana na poziomie bliskim 100%."
     ],
-    "correct": "pula adresów w tym zakresie jest wyczerpana na poziomie bliskim 100%.",
+    "correct": "zakres ten jest nieaktywny.",
     "file": "./data/385.jpg",
     "categories": ["networking/ip", "windows-server", "networking"],
     "question": "W systemie serwerowym Windows widoczny jest zakres adresów IPv4. Wskazana ikona znajdująca się przy jego nazwie oznacza, że"
@@ -19201,7 +19201,7 @@
   },
   {
     "ans": ["62.21.99.95", "192.168.0.1", "255.255.255.0", "192.168.0.11"],
-    "correct": "192.168.0.1",
+    "correct": "192.168.0.11",
     "file": "./data/390.jpg",
     "categories": ["networking/ip", "tools/network", "tools", "networking"],
     "question": "W wyniku polecenia ipconfig została wyświetlona konfiguracja przedstawiona na rysunku. Adres IP testowanej stacji roboczej ma postać"
@@ -19793,7 +19793,7 @@
       "1 długi, 5 krótkich",
       "1 długi, 5 krótkich"
     ],
-    "correct": "1 długi, 5 krótkich",
+    "correct": "1 długi, 2 krótkie",
     "file": null,
     "categories": ["hardware"],
     "question": "Wskaż sygnał oznaczający błąd karty graficznej komputera wyposażonego w BIOS POST firmy AWARD"
@@ -20494,7 +20494,7 @@
   },
   {
     "ans": ["73-249", "148-159", "1168-3984", "2368-2544"],
-    "correct": "2368-2544",
+    "correct": "148-159",
     "file": null,
     "categories": ["conversion/systems", "conversion", "liczenie"],
     "question": "Zakres we/wy kontrolera DMA zapisany w postaci heksadecymalnej wynosi 0094-009F, a w systemie dziesiętnym"

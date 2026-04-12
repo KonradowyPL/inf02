@@ -34,3 +34,7 @@ span:has(.empty) {
   font-size: 80%;
   color: #444;
 }
+
+.highlight {
+  color: red;
+}

@@ -258,7 +258,7 @@ function format(count) {
   if (count === 1) {
     return `${count} wynik:`;
   } else if (count === 0) {
-    return `${count} wyników`;
+    return `${count} wyników :(`;
   }
 
   const lastDigit = count % 10;

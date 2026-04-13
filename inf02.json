@@ -4450,6 +4450,13 @@
     "question": "Interfejsem wewnętrznym komputera jest"
   },
   {
+    "ans": ["AGP", "DVI", "IrDA", "RJ-45"],
+    "correct": "AGP",
+    "file": null,
+    "categories": ["hardware/interface", "hardware"],
+    "question": "Interfejsem wewnętrznym komputera jest"
+  },
+  {
     "ans": [
       "przesyłania poczty e-mail",
       "transmisji głosu przez sieć",
@@ -6642,6 +6649,13 @@
     "question": "Która z topologii fizycznych sieci komputerowej jest przedstawiona na rysunku?"
   },
   {
+    "ans": ["Siatki", "Magistrali", "Gwiazdy", "Pierścienia"],
+    "correct": "Siatki",
+    "file": "./data/452.jpg",
+    "categories": ["networking/topology", "networking"],
+    "question": "Która z topologii fizycznych sieci komputerowej jest przedstawiona na rysunku?"
+  },
+  {
     "ans": ["A", "B", "C", "D"],
     "correct": "A",
     "file": "./data/95.jpg",
@@ -7386,6 +7400,13 @@
     "ans": ["Przełącznik", "Koncentrator", "Most sieciowy", "Punkt dostępowy"],
     "correct": "Punkt dostępowy",
     "file": "./data/106.jpg",
+    "categories": ["hardware", "networking"],
+    "question": "Które urządzenie przedstawia rysunek?"
+  },
+  {
+    "ans": ["Access Point", "Bramka VoIP", "Hub", "Switch"],
+    "correct": "Access Point",
+    "file": "./data/451.jpg",
     "categories": ["hardware", "networking"],
     "question": "Które urządzenie przedstawia rysunek?"
   },
@@ -8969,6 +8990,13 @@
     "question": "Który z protokołów jest stosowany w telefonii internetowej?"
   },
   {
+    "ans": ["FTP", "H.323", "HTTP", "NetBEUI"],
+    "correct": "H.323",
+    "file": null,
+    "categories": ["networking/protocol", "networking"],
+    "question": "Który z protokołów jest stosowany w telefonii internetowej?"
+  },
+  {
     "ans": ["POP3", "telnet", "SSH", "TFTP"],
     "correct": "SSH",
     "file": null,
@@ -10322,6 +10350,13 @@
     "question": "Na fotografii przedstawiono"
   },
   {
+    "ans": ["kartridż", "taśmę barwiącą", "tuner", "tusz"],
+    "correct": "taśmę barwiącą",
+    "file": "./data/444.jpg",
+    "categories": ["tools", "hardware", "hardware/drukarki"],
+    "question": "Na fotografii przedstawiono"
+  },
+  {
     "ans": [
       "przełączać sygnały wejściowe",
       "regulować zniekształcony obraz",
@@ -10677,6 +10712,25 @@
     ],
     "correct": "lokalizator przewodów.",
     "file": "./data/173.jpg",
+    "categories": ["tools", "networking"],
+    "question": "Na rysunku przedstawiono"
+  },
+  {
+    "ans": [
+      "czujnik temperatury",
+      "impulsator",
+      "sondę logiczną",
+      "tester płyt głównych"
+    ],
+    "correct": "tester płyt głównych",
+    "file": "./data/446.jpg",
+    "categories": ["tools", "hardware"],
+    "question": "Na rysunku przedstawiono"
+  },
+  {
+    "ans": ["kartę sieciową", "koncentrator", "patch panel", "przełącznik"],
+    "correct": "patch panel",
+    "file": "./data/455.jpg",
     "categories": ["tools", "networking"],
     "question": "Na rysunku przedstawiono"
   },
@@ -11239,6 +11293,18 @@
     "correct": "terminator BNC",
     "file": "./data/226.jpg",
     "categories": ["networking"],
+    "question": "Na zdjęciu przedstawiono"
+  },
+  {
+    "ans": [
+      "kartę sieci bezprzewodowej",
+      "kartę telewizyjną",
+      "modem kablowy",
+      "moduł łączący komputer z UPS"
+    ],
+    "correct": "kartę sieci bezprzewodowej",
+    "file": "./data/489.jpg",
+    "categories": ["networking", "hardware"],
     "question": "Na zdjęciu przedstawiono"
   },
   {
@@ -13765,6 +13831,25 @@
   },
   {
     "ans": [
+      "Automatyczne przydzielanie adresacji urządzeniom sieciowym",
+      "Odwzorowanie adresów fizycznych MAC na adresy IP",
+      "Odwzorowanie nazw domenowych na adresy IP",
+      "Statyczne przydzielanie adresacji urządzeniom sieciowym"
+    ],
+    "correct": "Odwzorowanie nazw domenowych na adresy IP",
+    "file": null,
+    "categories": [
+      "networking",
+      "networking/protocol",
+      "web/dns",
+      "web",
+      "standard"
+    ],
+    "question": "Protokół DNS odpowiada za"
+  },
+
+  {
+    "ans": [
       "SCP w systemie Windows",
       "terminalowej w systemie Linux",
       "pulpitu zdalnego w systemie Windows",
@@ -15169,6 +15254,25 @@
     "question": "Rysunek przedstawia topologię"
   },
   {
+    "ans": ["gwiazdy", "magistrali", "siatki", "pierścienia"],
+    "correct": "gwiazdy",
+    "file": "./data/447.jpg",
+    "categories": ["networking/topology", "networking"],
+    "question": "Rysunek przedstawia topologię"
+  },
+  {
+    "ans": [
+      "rozszerzonej gwiazdy",
+      "magistrali",
+      "pełnej siatki",
+      "pierścienia"
+    ],
+    "correct": "rozszerzonej gwiazdy",
+    "file": "./data/454.jpg",
+    "categories": ["networking/topology", "networking"],
+    "question": "Rysunek przedstawia topologię"
+  },
+  {
     "ans": ["USB", "LPT", "COM", "FireWire"],
     "correct": "COM",
     "file": "./data/333.jpg",
@@ -15703,6 +15807,13 @@
     ],
     "correct": "gniazdo telekomunikacyjne",
     "file": "./data/346.jpg",
+    "categories": ["networking"],
+    "question": "Symbol graficzny przedstawiony na rysunku oznacza"
+  },
+  {
+    "ans": ["bramę", "koncentrator", "most", "przełącznik"],
+    "correct": "przełącznik",
+    "file": "./data/453.jpg",
     "categories": ["networking"],
     "question": "Symbol graficzny przedstawiony na rysunku oznacza"
   },
@@ -16409,6 +16520,18 @@
     "ans": ["ruter", "wtórnik", "koncentrator", "bramka VoIP"],
     "correct": "koncentrator",
     "file": "./data/356.jpg",
+    "categories": ["hardware", "networking"],
+    "question": "Urządzenie przedstawione na rysunku to"
+  },
+  {
+    "ans": [
+      "Narzędzie uderzeniowe typu krone",
+      "Tester diodowy przewodu UTP",
+      "Tester długości okablowania",
+      "Zaciskarka wtyków RJ45"
+    ],
+    "correct": "Tester diodowy przewodu UTP",
+    "file": "./data/448.jpg",
     "categories": ["hardware", "networking"],
     "question": "Urządzenie przedstawione na rysunku to"
   },
@@ -20722,6 +20845,31 @@
     "categories": ["networking/switch", "networking"],
     "question": "Zdjęcie przedstawia"
   },
+  {
+    "ans": [
+      "chłodzenie aktywne chipsetu",
+      "chłodzenie pasywne chipsetu",
+      "wentylator karty graficznej",
+      "wentylator procesora"
+    ],
+    "correct": "chłodzenie pasywne chipsetu",
+    "file": "./data/432.jpg",
+    "categories": ["hardware"],
+    "question": "Zdjęcie przedstawia"
+  },
+  {
+    "ans": [
+      "przedłużacz kabla UTP",
+      "wtyk audio",
+      "wtyk kabla koncentrycznego",
+      "wtyk światłowodu"
+    ],
+    "correct": "wtyk światłowodu",
+    "file": "./data/450.jpg",
+    "categories": ["networking", "hardware"],
+    "question": "Zdjęcie przedstawia"
+  },
+
   {
     "ans": ["SIPP", "SIMM", "RIMM", "SDRAM"],
     "correct": "SDRAM",

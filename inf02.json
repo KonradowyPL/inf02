@@ -10723,14 +10723,14 @@
       "tester płyt głównych"
     ],
     "correct": "tester płyt głównych",
-    "file": "./data/446.jpg",
+    "file": "./data/456.jpg",
     "categories": ["tools", "hardware"],
     "question": "Na rysunku przedstawiono"
   },
   {
     "ans": ["kartę sieciową", "koncentrator", "patch panel", "przełącznik"],
     "correct": "patch panel",
-    "file": "./data/455.jpg",
+    "file": "./data/446.jpg",
     "categories": ["tools", "networking"],
     "question": "Na rysunku przedstawiono"
   },
